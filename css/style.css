@@ -1,0 +1,689 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Logo */
+.navbar-brand img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover img {
+    transform: scale(1.05);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding-top: 76px; /* Account for fixed navbar */
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 100px 0;
+    text-align: center;
+    color: white;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-section .lead {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Restaurant Cards */
+.restaurant-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.restaurant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.restaurant-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Esbak Carousel Styles */
+#esbakCarousel {
+    height: 200px;
+    overflow: hidden;
+}
+
+#esbakCarousel .carousel-item {
+    height: 200px;
+}
+
+#esbakCarousel .carousel-item img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+#esbakCarousel .carousel-indicators {
+    bottom: 10px;
+}
+
+#esbakCarousel .carousel-indicators button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    margin: 0 3px;
+}
+
+#esbakCarousel .carousel-indicators button.active {
+    background-color: white;
+}
+
+#esbakCarousel .carousel-control-prev,
+#esbakCarousel .carousel-control-next {
+    width: 10%;
+    opacity: 0.7;
+}
+
+#esbakCarousel .carousel-control-prev:hover,
+#esbakCarousel .carousel-control-next:hover {
+    opacity: 1;
+}
+
+/* Framiclad Carousel Styles */
+#framicladCarousel {
+    height: 200px;
+    overflow: hidden;
+}
+
+#framicladCarousel .carousel-item {
+    height: 200px;
+}
+
+#framicladCarousel .carousel-item img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+#framicladCarousel .carousel-indicators {
+    bottom: 10px;
+}
+
+#framicladCarousel .carousel-indicators button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: none;
+    margin: 0 3px;
+}
+
+#framicladCarousel .carousel-indicators button.active {
+    background-color: white;
+}
+
+#framicladCarousel .carousel-control-prev,
+#framicladCarousel .carousel-control-next {
+    width: 15%;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+#framicladCarousel .carousel-control-prev:hover,
+#framicladCarousel .carousel-control-next:hover {
+    opacity: 1;
+}
+
+/* Esbak Page Carousel Styles */
+#esbakPageCarousel {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+#esbakPageCarousel .carousel-item {
+    height: 300px;
+}
+
+#esbakPageCarousel .carousel-item img {
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+
+#esbakPageCarousel .carousel-indicators {
+    bottom: 15px;
+}
+
+#esbakPageCarousel .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: none;
+    margin: 0 4px;
+}
+
+#esbakPageCarousel .carousel-indicators button.active {
+    background-color: white;
+}
+
+#esbakPageCarousel .carousel-control-prev,
+#esbakPageCarousel .carousel-control-next {
+    width: 15%;
+    opacity: 0.8;
+}
+
+#esbakPageCarousel .carousel-control-prev:hover,
+#esbakPageCarousel .carousel-control-next:hover {
+    opacity: 1;
+}
+
+/* Framiclad Page Carousel Styles */
+#framicladPageCarousel {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+#framicladPageCarousel .carousel-item {
+    height: 300px;
+}
+
+#framicladPageCarousel .carousel-item img {
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+
+#framicladPageCarousel .carousel-indicators {
+    bottom: 15px;
+}
+
+#framicladPageCarousel .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: none;
+    margin: 0 4px;
+}
+
+#framicladPageCarousel .carousel-indicators button.active {
+    background-color: white;
+}
+
+#framicladPageCarousel .carousel-control-prev,
+#framicladPageCarousel .carousel-control-next {
+    width: 10%;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+#framicladPageCarousel .carousel-control-prev:hover,
+#framicladPageCarousel .carousel-control-next:hover {
+    opacity: 1;
+}
+
+.restaurant-card .card-body {
+    padding: 1.5rem;
+}
+
+.restaurant-card .card-title {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.restaurant-card .card-text {
+    color: #7f8c8d;
+    line-height: 1.6;
+}
+
+/* Restaurant Header */
+.restaurant-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 80px 0 60px;
+    color: white;
+}
+
+.restaurant-hero-img {
+    max-height: 300px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.restaurant-info p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Menu Categories */
+.menu-category {
+    margin-bottom: 4rem;
+}
+
+.category-title {
+    color: #2c3e50;
+    font-weight: 600;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+/* Menu Items */
+.menu-item {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.menu-item img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.menu-item .card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item .card-title {
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.menu-item .card-text {
+    color: #7f8c8d;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.menu-item-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.price {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #27ae60;
+}
+
+/* Order Methods */
+.order-methods {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.order-method-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.order-method-card:hover {
+    transform: translateY(-5px);
+}
+
+.order-method-icon {
+    margin-bottom: 1.5rem;
+}
+
+.order-method-card h4 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.order-method-card p {
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
+}
+
+/* Cart Sidebar */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100vh;
+    background: white;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    z-index: 1050;
+    transition: right 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-sidebar.open {
+    right: 0;
+}
+
+.cart-header {
+    background: #2c3e50;
+    color: white;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-header h5 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.cart-header .btn-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.cart-items {
+    flex: 1;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #e9ecef;
+    background: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 1rem;
+}
+
+.cart-item-details {
+    flex: 1;
+}
+
+.cart-item-name {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.25rem;
+}
+
+.cart-item-price {
+    color: #27ae60;
+    font-weight: 600;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    margin-left: 1rem;
+}
+
+.quantity-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 0.5rem;
+    font-weight: bold;
+}
+
+.quantity-btn:hover {
+    background: #2980b9;
+}
+
+.cart-item-remove {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 1rem;
+    font-weight: bold;
+}
+
+.cart-item-remove:hover {
+    background: #c0392b;
+}
+
+.cart-footer {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-top: 1px solid #e9ecef;
+}
+
+.cart-total {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* Cart Overlay */
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1040;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.cart-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background: #3498db;
+    border-color: #3498db;
+}
+
+.btn-primary:hover {
+    background: #2980b9;
+    border-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background: #27ae60;
+    border-color: #27ae60;
+}
+
+.btn-success:hover {
+    background: #229954;
+    border-color: #229954;
+    transform: translateY(-2px);
+}
+
+.btn-warning {
+    background: #f39c12;
+    border-color: #f39c12;
+    color: white;
+}
+
+.btn-warning:hover {
+    background: #e67e22;
+    border-color: #e67e22;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section .lead {
+        font-size: 1.25rem;
+    }
+    
+    .cart-sidebar {
+        width: 100%;
+        right: -100%;
+    }
+    
+    .restaurant-header {
+        padding: 60px 0 40px;
+    }
+    
+    .restaurant-hero-img {
+        margin-top: 2rem;
+    }
+    
+    .navbar-brand img {
+        height: 35px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        padding: 80px 0;
+    }
+    
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .menu-item-footer {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+    
+    .price {
+        text-align: center;
+    }
+    
+    .order-method-card {
+        padding: 1.5rem;
+    }
+    
+    .navbar-brand img {
+        height: 30px;
+    }
+}
+
+/* Animation Classes */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom Scrollbar */
+.cart-items::-webkit-scrollbar {
+    width: 6px;
+}
+
+.cart-items::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.cart-items::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.cart-items::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Loading States */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Success/Error Messages */
+.alert {
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 1rem;
+}
+
+.alert-success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.alert-danger {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Empty Cart State */
+.empty-cart {
+    text-align: center;
+    padding: 2rem;
+    color: #7f8c8d;
+}
+
+.empty-cart i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}

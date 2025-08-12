@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esbak Kitchen - Authentic Ghanaian Cuisine</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <img src="images/logo-Restaurant Hub.png" alt="Restaurant Hub Logo" height="40" class="me-2">
+                Restaurant Hub
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="cartBtn">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge bg-primary ms-1" id="cartCount">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Restaurant Header -->
+    <section class="restaurant-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1 class="display-4 fw-bold text-white mb-3">Esbak Kitchen</h1>
+                    <p class="lead text-white mb-4">Experience the authentic flavors of Ghana with our traditional dishes made from fresh, locally-sourced ingredients. From hearty stews to flavorful rice dishes, every meal tells a story of Ghanaian culture and culinary excellence.</p>
+                    <div class="restaurant-info">
+                        <p class="text-white mb-2"><i class="fas fa-clock me-2"></i>Open: Mon-Sat 9 AM - 10 PM, Sun 10 AM - 10 PM</p>
+                        <p class="text-white mb-2"><i class="fas fa-star me-2"></i>Rating: 4.7/5 (Based on 150+ reviews)</p>
+                        <p class="text-white"><i class="fas fa-map-marker-alt me-2"></i>Unnamed Road, Sunyani, Ghana</p>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
+                    <div id="esbakPageCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#esbakPageCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#esbakPageCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#esbakPageCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#esbakPageCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#esbakPageCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                            <button type="button" data-bs-target="#esbakPageCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                            <button type="button" data-bs-target="#esbakPageCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/Esbak.webp" class="d-block w-100 rounded restaurant-hero-img" alt="Esbak Kitchen">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/esbak1.webp" class="d-block w-100 rounded restaurant-hero-img" alt="Esbak Kitchen Interior">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/esbak restaurant inside.webp" class="d-block w-100 rounded restaurant-hero-img" alt="Esbak Restaurant Inside">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/esback 2.webp" class="d-block w-100 rounded restaurant-hero-img" alt="Esbak Kitchen View">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/esbak building.webp" class="d-block w-100 rounded restaurant-hero-img" alt="Esbak Building">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/esback 3.webp" class="d-block w-100 rounded restaurant-hero-img" alt="Esbak Kitchen Scene">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/esback building.webp" class="d-block w-100 rounded restaurant-hero-img" alt="Esbak Building Exterior">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#esbakPageCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#esbakPageCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Authentic Ghanaian Menu</h2>
+            
+            <!-- Starters & Appetizers -->
+            <div class="menu-category mb-5">
+                <h3 class="category-title mb-4">
+                    <i class="fas fa-leaf me-2"></i>Starters & Appetizers
+                </h3>
+                <div class="row g-4">
+                                                <div class="col-md-6 col-lg-4">
+                                <div class="menu-item card h-100">
+                                    <img src="images/kelewele.jpg" class="card-img-top" alt="Kelewele">
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title">Kelewele</h5>
+                                        <p class="card-text">Spiced fried plantains with ginger, pepper, and aromatic spices - a perfect Ghanaian street food starter</p>
+                                        <div class="menu-item-footer mt-auto">
+                                            <span class="price">₵15.00</span>
+                                                                                <button class="btn btn-primary btn-sm" onclick="addToCart('Kelewele', 15.00, 'Esbak Kitchen', 'images/kelewele.jpg')">
+                                        Add to Cart
+                                    </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                <div class="col-md-6 col-lg-4">
+                                <div class="menu-item card h-100">
+                                    <img src="images/peanut soup.jpg" class="card-img-top" alt="Peanut Soup">
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title">Peanut Soup</h5>
+                                        <p class="card-text">Rich and creamy groundnut soup with tender meat, vegetables, and traditional spices</p>
+                                        <div class="menu-item-footer mt-auto">
+                                            <span class="price">₵25.00</span>
+                                                                                <button class="btn btn-primary btn-sm" onclick="addToCart('Peanut Soup', 25.00, 'Esbak Kitchen', 'images/peanut soup.jpg')">
+                                        Add to Cart
+                                    </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                                <div class="col-md-6 col-lg-4">
+                                <div class="menu-item card h-100">
+                                    <img src="images/kenkey and fish.jpg" class="card-img-top" alt="Kenkey">
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title">Kenkey with Fish</h5>
+                                        <p class="card-text">Fermented corn dough served with grilled fish, hot pepper sauce, and fresh vegetables</p>
+                                        <div class="menu-item-footer mt-auto">
+                                            <span class="price">₵30.00</span>
+                                                                                <button class="btn btn-primary btn-sm" onclick="addToCart('Kenkey with Fish', 30.00, 'Esbak Kitchen', 'images/kenkey and fish.jpg')">
+                                        Add to Cart
+                                    </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+            </div>
+
+            <!-- Main Courses -->
+            <div class="menu-category mb-5">
+                <h3 class="category-title mb-4">
+                    <i class="fas fa-utensils me-2"></i>Main Courses
+                </h3>
+                <div class="row g-4">
+                                                <div class="col-md-6 col-lg-4">
+                                <div class="menu-item card h-100">
+                                    <img src="images/Jollof Rice.jpg" class="card-img-top" alt="Jollof Rice">
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title">Jollof Rice</h5>
+                                        <p class="card-text">Famous Ghanaian rice cooked in rich tomato sauce with chicken, vegetables, and aromatic spices</p>
+                                        <div class="menu-item-footer mt-auto">
+                                            <span class="price">₵45.00</span>
+                                                                                <button class="btn btn-primary btn-sm" onclick="addToCart('Jollof Rice', 45.00, 'Esbak Kitchen', 'images/Jollof Rice.jpg')">
+                                        Add to Cart
+                                    </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/fufu and light soup.jpg" class="card-img-top" alt="Fufu with Light Soup">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Fufu with Light Soup</h5>
+                                <p class="card-text">Pounded cassava and plantain served with light soup, goat meat, and fresh vegetables</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">₵50.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Fufu with Light Soup', 50.00, 'Esbak Kitchen', 'images/fufu and light soup.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/waakye.jpg" class="card-img-top" alt="Waakye">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Waakye</h5>
+                                <p class="card-text">Rice and beans cooked together with sorghum leaves, served with spaghetti, gari, and your choice of protein</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">₵40.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Waakye', 40.00, 'Esbak Kitchen', 'images/waakye.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/banku and tilapia.jpg" class="card-img-top" alt="Banku with Tilapia">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Banku with Tilapia</h5>
+                                <p class="card-text">Fermented corn and cassava dough served with grilled tilapia fish and hot pepper sauce</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">₵55.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Banku with Tilapia', 55.00, 'Esbak Kitchen', 'images/banku and tilapia.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/red red.jpg" class="card-img-top" alt="Red Red">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Red Red</h5>
+                                <p class="card-text">Black-eyed peas stew with palm oil, served with fried plantains and gari</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">₵35.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Red Red', 35.00, 'Esbak Kitchen', 'images/red red.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/amopkle.jpg" class="card-img-top" alt="Amokple">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Amokple</h5>
+                                <p class="card-text">Traditional corn dough served with okro soup, fish, and fresh vegetables</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">₵45.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Amokple', 45.00, 'Esbak Kitchen', 'images/amopkle.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grilled & BBQ -->
+            <div class="menu-category mb-5">
+                <h3 class="category-title mb-4">
+                    <i class="fas fa-fire me-2"></i>Grilled & BBQ Specialties
+                </h3>
+                <div class="row g-4">
+                                                <div class="col-md-6 col-lg-4">
+                                <div class="menu-item card h-100">
+                                    <img src="images/grilled chisken.webp" class="card-img-top" alt="Chicken Yassa">
+                                    <div class="card-body d-flex flex-column">
+                                        <h5 class="card-title">Chicken Yassa</h5>
+                                        <p class="card-text">Marinated chicken grilled to perfection with onions, mustard, and citrus flavors</p>
+                                        <div class="menu-item-footer mt-auto">
+                                            <span class="price">₵60.00</span>
+                                                                                <button class="btn btn-primary btn-sm" onclick="addToCart('Chicken Yassa', 60.00, 'Esbak Kitchen', 'images/grilled chisken.webp')">
+                                        Add to Cart
+                                    </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/grilled tilapia.jpg" class="card-img-top" alt="Grilled Tilapia">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Grilled Tilapia</h5>
+                                <p class="card-text">Fresh tilapia fish marinated in herbs and spices, grilled over charcoal</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">₵65.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Grilled Tilapia', 65.00, 'Esbak Kitchen', 'images/grilled tilapia.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/suya.jpg" class="card-img-top" alt="Suya">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Suya</h5>
+                                <p class="card-text">Spicy grilled beef skewers with groundnut powder and traditional spices</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">₵45.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Suya', 45.00, 'Esbak Kitchen', 'images/Suya.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drinks -->
+            <div class="menu-category mb-5">
+                <h3 class="category-title mb-4">
+                    <i class="fas fa-wine-glass me-2"></i>Traditional Drinks
+                </h3>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/palm wine.jpg" class="card-img-top" alt="Palm Wine">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Palm Wine</h5>
+                                <p class="card-text">Traditional fermented palm sap, naturally sweet and refreshing</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">₵20.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Palm Wine', 20.00, 'Esbak Kitchen', 'images/palm wine.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/sobolo.jpg" class="card-img-top" alt="Sobolo">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Sobolo</h5>
+                                <p class="card-text">Hibiscus tea with ginger and spices, served cold with a hint of sweetness</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">₵15.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Sobolo', 15.00, 'Esbak Kitchen', 'images/sobolo.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/ginger beer.jpg" class="card-img-top" alt="Ginger Beer">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Ginger Beer</h5>
+                                <p class="card-text">Homemade ginger beer with fresh ginger, lemon, and natural sweetness</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">₵12.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Ginger Beer', 12.00, 'Esbak Kitchen', 'images/ginger beer.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desserts -->
+            <div class="menu-category mb-5">
+                <h3 class="category-title mb-4">
+                    <i class="fas fa-ice-cream me-2"></i>Sweet Treats
+                </h3>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/boflot.jpg" class="card-img-top" alt="Bofrot">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Bofrot</h5>
+                                <p class="card-text">Sweet fried dough balls with a hint of nutmeg, perfect with tea or coffee</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">₵18.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Bofrot', 18.00, 'Esbak Kitchen', 'images/boflot.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/kokonte.jpg" class="card-img-top" alt="Kokonte">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Kokonte</h5>
+                                <p class="card-text">Sweet cassava pudding with coconut milk and palm sugar</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">₵22.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Kokonte', 22.00, 'Esbak Kitchen', 'images/kokonte.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/fresh fruit platter.jpg" class="card-img-top" alt="Fresh Fruit Platter">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Fresh Fruit Platter</h5>
+                                <p class="card-text">Seasonal tropical fruits including mango, pineapple, papaya, and watermelon</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">₵25.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Fresh Fruit Platter', 25.00, 'Esbak Kitchen', 'images/fresh fruit platter.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Methods Section -->
+    <section class="order-methods py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">How to Order from Esbak Kitchen</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="order-method-card text-center">
+                        <div class="method-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h4>WhatsApp Order</h4>
+                        <p>Send us your order via WhatsApp for quick processing and delivery</p>
+                        <a href="https://wa.me/233208262059?text=Hi! I'd like to place an order from Esbak Kitchen. Here's what I'd like to order:" class="btn btn-success w-100" target="_blank">
+                            <i class="fab fa-whatsapp me-2"></i>Order on WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="order-method-card text-center">
+                        <div class="method-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h4>Call Us</h4>
+                        <p>Speak directly with our staff to place your order</p>
+                        <a href="tel:+233208262059" class="btn btn-primary w-100">
+                            <i class="fas fa-phone me-2"></i>Call Now
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="order-method-card text-center">
+                        <div class="method-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h4>Dine-In</h4>
+                        <p>Visit our restaurant for the full Ghanaian dining experience</p>
+                        <button class="btn btn-outline-primary w-100" onclick="showDineInInfo()">
+                            <i class="fas fa-info-circle me-2"></i>Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h4><i class="fas fa-shopping-cart me-2"></i>Your Cart</h4>
+            <button class="btn-close" id="closeCart"></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be populated here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: <span id="cartTotalCurrency">₵</span><span id="cartTotal">0.00</span></strong>
+            </div>
+            <button class="btn btn-success w-100 mb-2" id="placeOrderBtn">
+                <i class="fas fa-check me-2"></i>Place Order
+            </button>
+            <button class="btn btn-outline-secondary w-100" id="clearCartBtn">
+                <i class="fas fa-trash me-2"></i>Clear Cart
+            </button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Esbak Kitchen</h5>
+                    <p>Authentic Ghanaian cuisine in the heart of Sunyani, Brong Ahafo Region. Experience the rich flavors and traditions of Ghana.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p><i class="fas fa-phone me-2"></i>+233 20 826 2059</p>
+                    <p><i class="fas fa-envelope me-2"></i>info@esbakkitchen.com</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i>Unnamed Road, Sunyani, Ghana</p>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p>&copy; 2024 Esbak Kitchen. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

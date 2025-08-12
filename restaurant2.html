@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airport framiclad restaurant - Menu & Ordering</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <img src="images/logo-Restaurant Hub.png" alt="Restaurant Hub Logo" height="40" class="me-2">
+                Restaurant Hub
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="cartBtn">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge bg-primary ms-1" id="cartCount">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Restaurant Header -->
+    <section class="restaurant-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1 class="display-4 fw-bold text-white mb-3">Airport framiclad restaurant</h1>
+                    <p class="lead text-white mb-4">Airport framiclad restaurant specializes in delicious food featuring fresh ingredients and masterful preparation by the framiclad culinary team. Whether you're ordering a multi-course meal or grabbing a drink and pizza at the bar, Airport framiclad restaurant's lively, casual yet upscale atmosphere makes it perfect for dining with friends, family, clients and business associates.</p>
+                    <div class="restaurant-info">
+                        <p class="text-white mb-2"><i class="fas fa-clock me-2"></i>Closed ⋅ Opens 7 am Mon</p>
+                        <p class="text-white mb-2"><i class="fas fa-star me-2"></i>26 Google reviews</p>
+                        <p class="text-white"><i class="fas fa-map-marker-alt me-2"></i>Airport, Sunyani</p>
+                        <p class="text-white"><i class="fas fa-phone me-2"></i>024 251 3489</p>
+                        <p class="text-white"><i class="fas fa-money-bill me-2"></i>Price: GH₵1–150 per person</p>
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
+                    <div id="framicladPageCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#framicladPageCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#framicladPageCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#framicladPageCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#framicladPageCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#framicladPageCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                            <button type="button" data-bs-target="#framicladPageCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+                            <button type="button" data-bs-target="#framicladPageCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="images/framiclad.webp" class="d-block w-100" alt="Airport framiclad restaurant">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/framiclad inside.webp" class="d-block w-100" alt="Framiclad Restaurant Inside">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/framiclad salad.webp" class="d-block w-100" alt="Framiclad Salad">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/framiclad jollof.webp" class="d-block w-100" alt="Framiclad Jollof Rice">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/framiclad tilapia.webp" class="d-block w-100" alt="Framiclad Tilapia">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/framiclad order.webp" class="d-block w-100" alt="Framiclad Order">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/menu.webp" class="d-block w-100" alt="Framiclad Menu">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#framicladPageCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#framicladPageCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Our Authentic Menu</h2>
+            
+            <!-- Framiclad Specialties -->
+            <div class="menu-category mb-5">
+                <h3 class="category-title mb-4">
+                    <i class="fas fa-star me-2"></i>Framiclad Specialties
+                </h3>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/framiclad tilapia.webp" class="card-img-top" alt="Framiclad Tilapia">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Framiclad Tilapia</h5>
+                                <p class="card-text">Fresh grilled tilapia fish with special framiclad seasoning and herbs</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">GH₵55.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Framiclad Tilapia', 55.00, 'Airport framiclad restaurant', 'images/framiclad tilapia.webp')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/framiclad jollof.webp" class="card-img-top" alt="Framiclad Jollof Rice">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Framiclad Jollof Rice</h5>
+                                <p class="card-text">Signature jollof rice with framiclad special blend of spices and tender chicken</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">GH₵45.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Framiclad Jollof Rice', 45.00, 'Airport framiclad restaurant', 'images/framiclad jollof.webp')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/framiclad salad.webp" class="card-img-top" alt="Framiclad Fresh Salad">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Framiclad Fresh Salad</h5>
+                                <p class="card-text">Crisp garden salad with framiclad house dressing and fresh vegetables</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">GH₵30.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Framiclad Fresh Salad', 30.00, 'Airport framiclad restaurant', 'images/framiclad salad.webp')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Continental Dishes -->
+            <div class="menu-category mb-5">
+                <h3 class="category-title mb-4">
+                    <i class="fas fa-utensils me-2"></i>Continental Dishes
+                </h3>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/soye continental.jpg" class="card-img-top" alt="Soye Continental">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Soye Continental</h5>
+                                <p class="card-text">Premium continental dish with tender meat and rich sauce</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">GH₵65.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Soye Continental', 65.00, 'Airport framiclad restaurant', 'images/soye continental.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/Goumet Continental.jpg" class="card-img-top" alt="Gourmet Continental">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Gourmet Continental</h5>
+                                <p class="card-text">Exquisite continental cuisine with premium ingredients and presentation</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">GH₵75.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Gourmet Continental', 75.00, 'Airport framiclad restaurant', 'images/Goumet Continental.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/honey Glazed continental.jpg" class="card-img-top" alt="Honey Glazed Continental">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Honey Glazed Continental</h5>
+                                <p class="card-text">Sweet and savory continental dish with honey glaze and tender meat</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">GH₵70.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Honey Glazed Continental', 70.00, 'Airport framiclad restaurant', 'images/honey Glazed continental.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Traditional Drinks -->
+            <div class="menu-category mb-5">
+                <h3 class="category-title mb-4">
+                    <i class="fas fa-wine-glass me-2"></i>Traditional Drinks
+                </h3>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/alomo drink.jpg" class="card-img-top" alt="Alomo Bitters">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Alomo Bitters</h5>
+                                <p class="card-text">Traditional Ghanaian herbal bitters with medicinal properties</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">GH₵20.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Alomo Bitters', 20.00, 'Airport framiclad restaurant', 'images/alomo drink.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/Asana local drink.jpg" class="card-img-top" alt="Asana Local Drink">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Asana Local Drink</h5>
+                                <p class="card-text">Refreshing local beverage made from natural ingredients</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">GH₵18.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Asana Local Drink', 18.00, 'Airport framiclad restaurant', 'images/Asana local drink.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/pitoo.jpg" class="card-img-top" alt="Pitoo">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Pitoo</h5>
+                                <p class="card-text">Traditional Ghanaian drink with unique flavor and health benefits</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">GH₵15.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Pitoo', 15.00, 'Airport framiclad restaurant', 'images/pitoo.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seafood Delights -->
+            <div class="menu-category mb-5">
+                <h3 class="category-title mb-4">
+                    <i class="fas fa-fish me-2"></i>Seafood Delights
+                </h3>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/Sea food 1.jpg" class="card-img-top" alt="Fresh Seafood Platter">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Fresh Seafood Platter</h5>
+                                <p class="card-text">Assorted fresh seafood with special framiclad seasoning</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">GH₵85.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Fresh Seafood Platter', 85.00, 'Airport framiclad restaurant', 'images/Sea food 1.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/Sea food 2.jpg" class="card-img-top" alt="Grilled Seafood">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Grilled Seafood</h5>
+                                <p class="card-text">Perfectly grilled seafood with herbs and lemon butter sauce</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">GH₵75.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Grilled Seafood', 75.00, 'Airport framiclad restaurant', 'images/Sea food 2.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/Sea food 3.jpg" class="card-img-top" alt="Seafood Special">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Seafood Special</h5>
+                                <p class="card-text">Chef's special seafood combination with exotic spices</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">GH₵90.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Seafood Special', 90.00, 'Airport framiclad restaurant', 'images/Sea food 3.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desserts & Pastries -->
+            <div class="menu-category mb-5">
+                <h3 class="category-title mb-4">
+                    <i class="fas fa-birthday-cake me-2"></i>Desserts & Pastries
+                </h3>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/fresh fruit platter.jpg" class="card-img-top" alt="Fresh Fruit Platter">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Fresh Fruit Platter</h5>
+                                <p class="card-text">Assorted seasonal fruits with honey drizzle and mint garnish</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">GH₵35.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Fresh Fruit Platter', 35.00, 'Airport framiclad restaurant', 'images/fresh fruit platter.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/boflot.jpg" class="card-img-top" alt="Boflot">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Boflot</h5>
+                                <p class="card-text">Traditional Ghanaian fried dough balls with sugar coating</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">GH₵25.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Boflot', 25.00, 'Airport framiclad restaurant', 'images/boflot.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="menu-item card h-100">
+                            <img src="images/amopkle.jpg" class="card-img-top" alt="Amopkle">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Amopkle</h5>
+                                <p class="card-text">Sweet traditional dessert with rich flavors and texture</p>
+                                <div class="menu-item-footer mt-auto">
+                                    <span class="price">GH₵30.00</span>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Amopkle', 30.00, 'Airport framiclad restaurant', 'images/amopkle.jpg')">
+                                        Add to Cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Methods Section -->
+    <section class="order-methods py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">How to Order</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="order-method-card text-center">
+                        <div class="order-method-icon mb-3">
+                            <i class="fab fa-whatsapp fa-3x text-success"></i>
+                        </div>
+                        <h4>WhatsApp Order</h4>
+                        <p>Send us your order via WhatsApp for quick service</p>
+                        <a href="https://wa.me/233242513489?text=Hi! I'd like to order from Airport framiclad restaurant. Here's my order:" class="btn btn-success w-100" target="_blank">
+                            <i class="fab fa-whatsapp me-2"></i>Order via WhatsApp
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="order-method-card text-center">
+                        <div class="order-method-icon mb-3">
+                            <i class="fas fa-phone fa-3x text-primary"></i>
+                        </div>
+                        <h4>Phone Order</h4>
+                        <p>Call us directly to place your order</p>
+                        <a href="tel:+233242513489" class="btn btn-primary w-100">
+                            <i class="fas fa-phone me-2"></i>Call Now
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="order-method-card text-center">
+                        <div class="order-method-icon mb-3">
+                            <i class="fas fa-store fa-3x text-warning"></i>
+                        </div>
+                        <h4>Dine-In</h4>
+                        <p>Visit our restaurant for a dine-in experience</p>
+                        <button class="btn btn-warning w-100" onclick="showDineInInfo()">
+                            <i class="fas fa-store me-2"></i>Dine-In Info
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h5><i class="fas fa-shopping-cart me-2"></i>Your Cart</h5>
+            <button class="btn-close" id="closeCart"></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be populated here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total: <span id="cartTotalCurrency">₵</span><span id="cartTotal">0.00</span></strong>
+            </div>
+            <button class="btn btn-success w-100" id="placeOrderBtn">Place Order</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <p>&copy; 2024 Restaurant Hub. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
