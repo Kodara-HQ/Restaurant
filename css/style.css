@@ -53,6 +53,25 @@ body {
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
+/* Restaurant Section Layout Fixes */
+#restaurants .row {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#restaurants .col-lg-4 {
+    flex: 0 0 auto;
+    width: calc(33.333% - 1rem);
+    margin: 0 0.5rem;
+}
+
+@media (max-width: 991.98px) {
+    #restaurants .col-lg-4 {
+        width: 100%;
+        margin: 0 0 1rem 0;
+    }
+}
+
 .restaurant-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
