@@ -8,13 +8,13 @@ class Cart {
 
     // Helper method to get currency symbol based on restaurant
     getCurrencySymbol(restaurant) {
-        // Ghanaian restaurants use Ghanaian Cedi (₵)
-        if (restaurant && (restaurant.includes('Esbak') || restaurant.includes('framiclad') || restaurant.includes('Sika'))) {
-            console.log(`Currency for ${restaurant}: ₵ (Ghanaian)`);
+        // All Odumase restaurants use Ghanaian Cedi (₵)
+        if (restaurant && (restaurant.includes('Esbak') || restaurant.includes('framiclad') || restaurant.includes('Sika') || restaurant.includes('First Choice Grills'))) {
+            console.log(`Currency for ${restaurant}: ₵ (Ghanaian Cedi - Odumase)`);
             return '₵';
         }
-        // Default to dollar sign for other restaurants
-        console.log(`Currency for ${restaurant}: ₵ (Default)`);
+        // Default to Ghanaian Cedi for Odumase restaurants
+        console.log(`Currency for ${restaurant}: ₵ (Ghanaian Cedi - Odumase Default)`);
         return '₵';
     }
 

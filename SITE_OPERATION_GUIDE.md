@@ -13,8 +13,8 @@
          │                       │                       │
          ▼                       ▼                       ▼
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│  Restaurant     │    │  Order          │    │  Success        │
-│  Pages          │    │  Confirmation   │    │  Modal          │
+│  Odumase        │    │  Order          │    │  Success        │
+│  Restaurants    │    │  Confirmation   │    │  Modal          │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
 ```
 
@@ -25,13 +25,13 @@
 ### **Phase 1: Homepage & Restaurant Discovery**
 1. **User lands on index.html**
    - Sees Restaurant Hub logo and navigation
-   - Views featured restaurants with images and descriptions
+   - Views featured Odumase restaurants with images and descriptions
    - Navigation shows: Home, Restaurants, Cart (with item count)
 
 2. **Restaurant Selection**
-   - User clicks on any restaurant card
+   - User clicks on any Odumase restaurant card
    - Redirected to specific restaurant page (restaurant1.html, restaurant2.html, etc.)
-   - Each restaurant has unique branding, menu, and contact information
+   - Each restaurant has unique branding, authentic Ghanaian menu, and local contact information
 
 ### **Phase 2: Menu Browsing & Cart Management**
 1. **Menu Display**
@@ -145,16 +145,17 @@ localStorage.setItem('restaurantHubCart', JSON.stringify(cartData));
 ### **Currency System**
 ```javascript
 getCurrencySymbol(restaurant) {
-  // Ghanaian restaurants use Ghanaian Cedi (₵)
+  // All Odumase restaurants use Ghanaian Cedi (₵)
   if (restaurant && (
     restaurant.includes('Esbak') || 
     restaurant.includes('framiclad') || 
-    restaurant.includes('Sika')
+    restaurant.includes('Sika') ||
+    restaurant.includes('First Choice Grills')
   )) {
     return '₵';
   }
-  // Default to dollar sign for other restaurants
-  return '$';
+  // Default to Ghanaian Cedi for Odumase restaurants
+  return '₵';
 }
 ```
 
@@ -169,9 +170,9 @@ getCurrencySymbol(restaurant) {
 ## 🎯 **Key Features & Capabilities**
 
 ### **Multi-Restaurant Support**
-- **4 Different Restaurants**: Each with unique branding and menus
-- **Currency Flexibility**: Automatic ₵/$ detection based on restaurant
-- **Mixed Orders**: Users can order from multiple restaurants in one cart
+- **4 Local Odumase Restaurants**: Each with unique branding and authentic Ghanaian menus
+- **Ghanaian Cedi Pricing**: All restaurants use ₵ for consistent local pricing
+- **Mixed Orders**: Users can order from multiple Odumase restaurants in one cart
 
 ### **Responsive Design**
 - **Mobile-First**: Optimized for all device sizes
@@ -248,9 +249,9 @@ Payment → Process Form → Simulate → Success Modal → Clear Cart → Home
 ## 🎯 **Presentation Talking Points**
 
 ### **Opening (2 minutes)**
-- "Restaurant Hub is a complete food ordering platform that demonstrates modern web development practices"
+- "Restaurant Hub is a complete food ordering platform specifically designed for Odumase, Ghana"
 - "Built entirely with frontend technologies but designed for easy backend integration"
-- "Supports multiple restaurants with different currencies and payment methods"
+- "Supports multiple local Odumase restaurants with Ghanaian Cedi (₵) pricing"
 
 ### **Demo Flow (5 minutes)**
 1. **Show Homepage**: Highlight restaurant variety and navigation
