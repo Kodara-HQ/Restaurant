@@ -20,18 +20,20 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="index.html#restaurants">Restaurants</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="cartBtn">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge bg-primary ms-1" id="cartCount">0</span>
+                        </a>
+                    </li>
                 </ul>
-                <button class="btn btn-outline-light" id="cartBtn">
-                    <i class="fas fa-shopping-cart me-2"></i>Cart
-                    <span class="badge bg-primary ms-2" id="cartCount">0</span>
-                </button>
             </div>
         </div>
     </nav>
@@ -111,7 +113,7 @@
                                 <p class="card-text">Crispy spring rolls with fresh vegetables and special Sika dipping sauce</p>
                                 <div class="menu-item-footer mt-auto">
                                     <span class="price">GH₵25.00</span>
-                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Sika Spring Rolls', 25.00, 'Sika Cuisine')">Add to Cart</button>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Sika Spring Rolls', 25.00, 'Sika Cuisine', 'images/sika spring rolls.jpg')">Add to Cart</button>
                                 </div>
                             </div>
                         </div>
@@ -124,7 +126,7 @@
                                 <p class="card-text">Delicious chicken pie with flaky pastry and rich filling</p>
                                 <div class="menu-item-footer mt-auto">
                                     <span class="price">GH₵35.00</span>
-                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Sika Chicken Pie', 35.00, 'Sika Cuisine')">Add to Cart</button>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Sika Chicken Pie', 35.00, 'Sika Cuisine', 'images/sika chiken pie.jpg')">Add to Cart</button>
                                 </div>
                             </div>
                         </div>
@@ -137,7 +139,7 @@
                                 <p class="card-text">Traditional Ghanaian banku with authentic Sika preparation</p>
                                 <div class="menu-item-footer mt-auto">
                                     <span class="price">GH₵20.00</span>
-                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Sika Banku', 20.00, 'Sika Cuisine')">Add to Cart</button>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Sika Banku', 20.00, 'Sika Cuisine', 'images/sika banko.jpg')">Add to Cart</button>
                                 </div>
                             </div>
                         </div>
@@ -157,7 +159,7 @@
                                 <p class="card-text">Signature jollof rice with Sika's special blend of spices and tender chicken</p>
                                 <div class="menu-item-footer mt-auto">
                                     <span class="price">GH₵30.00</span>
-                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Sika Jollof Rice', 30.00, 'Sika Cuisine')">Add to Cart</button>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Sika Jollof Rice', 30.00, 'Sika Cuisine', 'images/sika jollof.jpg')">Add to Cart</button>
                                 </div>
                             </div>
                         </div>
@@ -170,7 +172,7 @@
                                 <p class="card-text">Delicious fried rice with vegetables and choice of protein</p>
                                 <div class="menu-item-footer mt-auto">
                                     <span class="price">GH₵28.00</span>
-                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Sika Fried Rice', 28.00, 'Sika Cuisine')">Add to Cart</button>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Sika Fried Rice', 28.00, 'Sika Cuisine', 'images/sika fried rice.jpg')">Add to Cart</button>
                                 </div>
                             </div>
                         </div>
@@ -183,7 +185,7 @@
                                 <p class="card-text">Stir-fried noodles with fresh vegetables and special Sika sauce</p>
                                 <div class="menu-item-footer mt-auto">
                                     <span class="price">GH₵25.00</span>
-                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Sika Noodles', 25.00, 'Sika Cuisine')">Add to Cart</button>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Sika Noodles', 25.00, 'Sika Cuisine', 'images/sika nodles.jpg')">Add to Cart</button>
                                 </div>
                             </div>
                         </div>
@@ -203,7 +205,7 @@
                                 <p class="card-text">Refreshing soya milk drink, perfect with Sika dishes</p>
                                 <div class="menu-item-footer mt-auto">
                                     <span class="price">GH₵15.00</span>
-                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Sika Soya Drink', 15.00, 'Sika Cuisine')">Add to Cart</button>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Sika Soya Drink', 15.00, 'Sika Cuisine', 'images/sika soya drink.jpg')">Add to Cart</button>
                                 </div>
                             </div>
                         </div>
@@ -216,7 +218,7 @@
                                 <p class="card-text">Fresh pineapple juice, naturally sweet and refreshing</p>
                                 <div class="menu-item-footer mt-auto">
                                     <span class="price">GH₵12.00</span>
-                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Sika Pineapple Drink', 12.00, 'Sika Cuisine')">Add to Cart</button>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Sika Pineapple Drink', 12.00, 'Sika Cuisine', 'images/sika pine apple drink.jpg')">Add to Cart</button>
                                 </div>
                             </div>
                         </div>
@@ -229,7 +231,7 @@
                                 <p class="card-text">Fresh orange juice, vitamin C rich and delicious</p>
                                 <div class="menu-item-footer mt-auto">
                                     <span class="price">GH₵12.00</span>
-                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Sika Orange Drink', 12.00, 'Sika Cuisine')">Add to Cart</button>
+                                    <button class="btn btn-primary btn-sm" onclick="addToCart('Sika Orange Drink', 12.00, 'Sika Cuisine', 'images/sika orange drink.jpg')">Add to Cart</button>
                                 </div>
                             </div>
                         </div>

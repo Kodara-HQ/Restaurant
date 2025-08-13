@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Restaurant Hub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .payment-method-card {
+            border: 2px solid #e9ecef;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .payment-method-card:hover {
+            border-color: #007bff;
+            box-shadow: 0 4px 15px rgba(0,123,255,0.1);
+        }
+        
+        .payment-method-card.selected {
+            border-color: #007bff;
+            background-color: #f8f9ff;
+        }
+        
+        .payment-method-card .method-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .payment-form {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .order-summary {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .order-item:last-child {
+            border-bottom: none;
+        }
+        
+        .total-amount {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #28a745;
+            text-align: center;
+            padding: 20px;
+            background: #d4edda;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .momo-options {
+            display: none;
+        }
+        
+        .card-options {
+            display: none;
+        }
+        
+        .show {
+            display: block;
+        }
+        
+        .payment-btn {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+            border-radius: 10px;
+        }
+        
+        .back-btn {
+            background: #6c757d;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .back-btn:hover {
+            background: #5a6268;
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <img src="images/logo-Restaurant Hub.png" alt="Restaurant Hub Logo" height="40" class="me-2">
+                Restaurant Hub
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#restaurants">Restaurants</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Payment Section -->
+    <section class="py-5" style="margin-top: 80px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <a href="javascript:history.back()" class="back-btn">
+                        <i class="fas fa-arrow-left me-2"></i>Back to Cart
+                    </a>
+                    
+                    <div class="text-center mb-4">
+                        <h1 class="display-5 fw-bold text-primary">
+                            <i class="fas fa-credit-card me-3"></i>Complete Your Payment
+                        </h1>
+                        <p class="lead text-muted">Choose your preferred payment method to complete your order</p>
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="order-summary">
+                        <h4 class="mb-3">
+                            <i class="fas fa-receipt me-2"></i>Order Summary
+                        </h4>
+                        <div id="orderItems">
+                            <!-- Order items will be populated here -->
+                        </div>
+                        <div class="total-amount">
+                            Total: <span id="orderTotal">$0.00</span>
+                        </div>
+                    </div>
+
+                    <!-- Payment Methods -->
+                    <div class="payment-form">
+                        <h4 class="mb-4">
+                            <i class="fas fa-wallet me-2"></i>Select Payment Method
+                        </h4>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="payment-method-card" onclick="selectPaymentMethod('momo')">
+                                    <div class="text-center">
+                                        <div class="method-icon text-success">
+                                            <i class="fas fa-mobile-alt"></i>
+                                        </div>
+                                        <h5>Mobile Money (MoMo)</h5>
+                                        <p class="text-muted mb-0">Pay with MTN, Vodafone, or AirtelTigo</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="payment-method-card" onclick="selectPaymentMethod('card')">
+                                    <div class="text-center">
+                                        <div class="method-icon text-primary">
+                                            <i class="fas fa-credit-card"></i>
+                                        </div>
+                                        <h5>Credit/Debit Card</h5>
+                                        <p class="text-muted mb-0">Visa, Mastercard, or other cards</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Money Options -->
+                        <div id="momoOptions" class="momo-options">
+                            <h5 class="mb-3">Select Mobile Money Provider</h5>
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="momoProvider" id="mtn" value="mtn" checked>
+                                        <label class="form-check-label" for="mtn">
+                                            <i class="fas fa-mobile-alt text-warning me-2"></i>MTN Mobile Money
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="momoProvider" id="vodafone" value="vodafone">
+                                        <label class="form-check-label" for="vodafone">
+                                            <i class="fas fa-mobile-alt text-red me-2"></i>Vodafone Cash
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="momoProvider" id="airteltigo" value="airteltigo">
+                                        <label class="form-check-label" for="airteltigo">
+                                            <i class="fas fa-mobile-alt text-blue me-2"></i>AirtelTigo Money
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="momoNumber" class="form-label">Mobile Money Number</label>
+                                <input type="tel" class="form-control" id="momoNumber" placeholder="Enter your mobile money number" required>
+                            </div>
+                            
+                            <button class="btn btn-success payment-btn" onclick="processMoMoPayment()">
+                                <i class="fas fa-mobile-alt me-2"></i>Pay with Mobile Money
+                            </button>
+                        </div>
+
+                        <!-- Card Payment Options -->
+                        <div id="cardOptions" class="card-options">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="cardNumber" class="form-label">Card Number</label>
+                                    <input type="text" class="form-control" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="expiryDate" class="form-label">Expiry Date</label>
+                                    <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" maxlength="5" required>
+                                </div>
+                                <div class="col-md-3 mb-3">
+                                    <label for="cvv" class="form-label">CVV</label>
+                                    <input type="text" class="form-control" id="cvv" placeholder="123" maxlength="4" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="cardholderName" class="form-label">Cardholder Name</label>
+                                <input type="text" class="form-control" id="cardholderName" placeholder="Enter cardholder name" required>
+                            </div>
+                            
+                            <button class="btn btn-primary payment-btn" onclick="processCardPayment()">
+                                <i class="fas fa-credit-card me-2"></i>Pay with Card
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title">
+                        <i class="fas fa-check-circle me-2"></i>Payment Successful!
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <i class="fas fa-check-circle text-success" style="font-size: 4rem; margin-bottom: 20px;"></i>
+                    <h4>Thank you for your order!</h4>
+                    <p class="text-muted">Your payment has been processed successfully. You will receive a confirmation email shortly.</p>
+                    <div class="alert alert-info">
+                        <strong>Order ID:</strong> <span id="orderId"></span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="index.html" class="btn btn-primary">Return to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let selectedPaymentMethod = '';
+        let orderData = null;
+
+        // Load order data from localStorage
+        document.addEventListener('DOMContentLoaded', function() {
+            loadOrderData();
+            setupFormValidation();
+        });
+
+        function loadOrderData() {
+            const savedCart = localStorage.getItem('restaurantHubCart');
+            if (savedCart) {
+                try {
+                    orderData = JSON.parse(savedCart);
+                    displayOrderSummary();
+                } catch (e) {
+                    console.error('Error loading order data:', e);
+                    window.location.href = 'index.html';
+                }
+            } else {
+                window.location.href = 'index.html';
+            }
+        }
+
+        function displayOrderSummary() {
+            const orderItemsContainer = document.getElementById('orderItems');
+            const orderTotal = document.getElementById('orderTotal');
+            
+            if (orderData && orderData.items) {
+                // Determine currency symbol based on restaurant
+                const getCurrencySymbol = (restaurant) => {
+                    if (restaurant && (restaurant.includes('Esbak') || restaurant.includes('framiclad'))) {
+                        return '₵';
+                    }
+                    return '$';
+                };
+                
+                const currencySymbol = getCurrencySymbol(orderData.items[0]?.restaurant);
+                
+                orderItemsContainer.innerHTML = orderData.items.map(item => `
+                    <div class="order-item">
+                        <div>
+                            <strong>${item.name}</strong>
+                            <br><small class="text-muted">${item.restaurant}</small>
+                        </div>
+                        <div class="text-end">
+                            <span class="badge bg-secondary me-2">${item.quantity}x</span>
+                            <strong>${currencySymbol}${(item.price * item.quantity).toFixed(2)}</strong>
+                        </div>
+                    </div>
+                `).join('');
+                
+                orderTotal.textContent = `${currencySymbol}${orderData.total.toFixed(2)}`;
+            }
+        }
+
+        function selectPaymentMethod(method) {
+            selectedPaymentMethod = method;
+            
+            // Update UI
+            document.querySelectorAll('.payment-method-card').forEach(card => {
+                card.classList.remove('selected');
+            });
+            event.currentTarget.classList.add('selected');
+            
+            // Show/hide payment options
+            document.getElementById('momoOptions').classList.remove('show');
+            document.getElementById('cardOptions').classList.remove('show');
+            
+            if (method === 'momo') {
+                document.getElementById('momoOptions').classList.add('show');
+            } else if (method === 'card') {
+                document.getElementById('cardOptions').classList.add('show');
+            }
+        }
+
+        function processMoMoPayment() {
+            const momoNumber = document.getElementById('momoNumber').value;
+            const selectedProvider = document.querySelector('input[name="momoProvider"]:checked').value;
+            
+            if (!momoNumber) {
+                alert('Please enter your mobile money number');
+                return;
+            }
+            
+            // Simulate payment processing
+            showPaymentProcessing();
+            setTimeout(() => {
+                hidePaymentProcessing();
+                showSuccessModal();
+            }, 3000);
+        }
+
+        function processCardPayment() {
+            const cardNumber = document.getElementById('cardNumber').value;
+            const expiryDate = document.getElementById('expiryDate').value;
+            const cvv = document.getElementById('cvv').value;
+            const cardholderName = document.getElementById('cardholderName').value;
+            
+            if (!cardNumber || !expiryDate || !cvv || !cardholderName) {
+                alert('Please fill in all card details');
+                return;
+            }
+            
+            // Simulate payment processing
+            showPaymentProcessing();
+            setTimeout(() => {
+                hidePaymentProcessing();
+                showSuccessModal();
+            }, 3000);
+        }
+
+        function showPaymentProcessing() {
+            // Disable payment buttons
+            document.querySelectorAll('.payment-btn').forEach(btn => {
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Processing Payment...';
+            });
+        }
+
+        function hidePaymentProcessing() {
+            // Re-enable payment buttons
+            document.querySelectorAll('.payment-btn').forEach(btn => {
+                btn.disabled = false;
+                if (selectedPaymentMethod === 'momo') {
+                    btn.innerHTML = '<i class="fas fa-mobile-alt me-2"></i>Pay with Mobile Money';
+                } else {
+                    btn.innerHTML = '<i class="fas fa-credit-card me-2"></i>Pay with Card';
+                }
+            });
+        }
+
+        function showSuccessModal() {
+            // Generate random order ID
+            const orderId = 'ORD-' + Math.random().toString(36).substr(2, 9).toUpperCase();
+            document.getElementById('orderId').textContent = orderId;
+            
+            // Clear cart
+            localStorage.removeItem('restaurantHubCart');
+            
+            // Show success modal
+            const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+            successModal.show();
+        }
+
+        function setupFormValidation() {
+            // Card number formatting
+            document.getElementById('cardNumber').addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+                let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
+                e.target.value = formattedValue;
+            });
+
+            // Expiry date formatting
+            document.getElementById('expiryDate').addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length >= 2) {
+                    value = value.substr(0, 2) + '/' + value.substr(2);
+                }
+                e.target.value = value;
+            });
+
+            // CVV validation
+            document.getElementById('cvv').addEventListener('input', function(e) {
+                e.target.value = e.target.value.replace(/\D/g, '');
+            });
+        }
+    </script>
+</body>
+</html>

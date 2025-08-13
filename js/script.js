@@ -329,18 +329,17 @@ class Cart {
     }
 
     confirmOrder() {
-        // Clear cart after order confirmation
-        this.clearCart();
+        // Close cart modal
         this.closeCart();
-        
-        // Show success message
-        this.showNotification('Order confirmed! Thank you for your order.');
         
         // Remove modal
         const modal = document.querySelector('.modal');
         if (modal) {
             modal.remove();
         }
+        
+        // Redirect to payment page
+        window.location.href = 'payment.html';
     }
 }
 
