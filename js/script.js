@@ -9,7 +9,7 @@ class Cart {
     // Helper method to get currency symbol based on restaurant
     getCurrencySymbol(restaurant) {
         // All Odumase restaurants use Ghanaian Cedi (₵)
-        if (restaurant && (restaurant.includes('Esbak') || restaurant.includes('framiclad') || restaurant.includes('African Village Dine') || restaurant.includes('First Choice Grills'))) {
+        if (restaurant && (restaurant.includes('Esbak') || restaurant.includes('framiclad') || restaurant.includes('Harriet\'s Kitchen') || restaurant.includes('First Choice Grills'))) {
             console.log(`Currency for ${restaurant}: ₵ (Ghanaian Cedi - Odumase)`);
             return '₵';
         }

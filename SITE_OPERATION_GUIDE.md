@@ -149,7 +149,7 @@ getCurrencySymbol(restaurant) {
   if (restaurant && (
     restaurant.includes('Esbak') || 
     restaurant.includes('framiclad') || 
-    restaurant.includes('African Village Dine') ||
+    restaurant.includes('Harriet\'s Kitchen') ||
     restaurant.includes('First Choice Grills')
   )) {
     return '₵';
