@@ -318,13 +318,13 @@
             const orderTotal = document.getElementById('orderTotal');
             
             if (orderData && orderData.items) {
-                // Determine currency symbol based on restaurant
-                const getCurrencySymbol = (restaurant) => {
-                    if (restaurant && (restaurant.includes('Esbak') || restaurant.includes('framiclad'))) {
-                        return '₵';
-                    }
-                    return '$';
-                };
+                                 // Determine currency symbol based on restaurant
+                 const getCurrencySymbol = (restaurant) => {
+                     if (restaurant && (restaurant.includes('Esbak') || restaurant.includes('framiclad') || restaurant.includes('African Village Dine'))) {
+                         return '₵';
+                     }
+                     return '₵';
+                 };
                 
                 const currencySymbol = getCurrencySymbol(orderData.items[0]?.restaurant);
                 
