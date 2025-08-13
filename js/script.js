@@ -9,11 +9,13 @@ class Cart {
     // Helper method to get currency symbol based on restaurant
     getCurrencySymbol(restaurant) {
         // Ghanaian restaurants use Ghanaian Cedi (₵)
-        if (restaurant && (restaurant.includes('Esbak') || restaurant.includes('framiclad'))) {
+        if (restaurant && (restaurant.includes('Esbak') || restaurant.includes('framiclad') || restaurant.includes('Sika'))) {
+            console.log(`Currency for ${restaurant}: ₵ (Ghanaian)`);
             return '₵';
         }
         // Default to dollar sign for other restaurants
-        return '$';
+        console.log(`Currency for ${restaurant}: ₵ (Default)`);
+        return '₵';
     }
 
     init() {
@@ -178,6 +180,9 @@ class Cart {
             cartSidebar.classList.add('open');
             cartOverlay.classList.add('show');
             document.body.style.overflow = 'hidden';
+            
+            // Force currency update when cart is opened
+            this.forceCurrencyUpdate();
         }
     }
 
@@ -206,6 +211,11 @@ class Cart {
                 const cartData = JSON.parse(savedCart);
                 this.items = cartData.items || [];
                 this.total = cartData.total || 0;
+                
+                // Force currency update after loading cart
+                if (this.items.length > 0) {
+                    setTimeout(() => this.forceCurrencyUpdate(), 100);
+                }
             } catch (e) {
                 console.error('Error loading cart:', e);
                 this.items = [];
@@ -218,6 +228,19 @@ class Cart {
         this.items = [];
         this.total = 0;
         this.updateCart();
+    }
+
+    refreshCartDisplay() {
+        // Force refresh the cart display to update currency symbols
+        this.updateCartDisplay();
+    }
+
+    forceCurrencyUpdate() {
+        // Force update currency display for all items
+        if (this.items.length > 0) {
+            console.log('Forcing currency update for cart items...');
+            this.updateCartDisplay();
+        }
     }
 
     showNotification(message) {
@@ -307,7 +330,7 @@ class Cart {
                         </div>
                         <div class="text-center">
                             <h5 class="text-success">Total: ${this.getCurrencySymbol(restaurantNames[0])}${totalAmount}</h5>
-                            <p class="text-muted">This is a demo order. In a real system, this would be sent to the restaurant.</p>
+    
                         </div>
                     </div>
                     <div class="modal-footer">
