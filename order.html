@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Hub - Find Your Perfect Meal in Odumase, Ghana</title>
+    
+    <meta name="description" content="Order delicious food from the best local restaurants in Odumase, Ghana. Authentic Ghanaian cuisine delivered to your doorstep.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <img src="images/logo-Restaurant Hub.png" alt="Restaurant Hub Logo" height="40" class="me-2">
+                Restaurant Hub - Odumase
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="restaurants.html">Restaurants</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="order.html">Order</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="cartBtn">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge bg-primary ms-1" id="cartCount">0</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Order Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold text-white mb-4">Place Your Order</h1>
+            <p class="lead text-white mb-5">Order delicious food online and have it delivered to your doorstep</p>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Order Form -->
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header bg-primary text-white">
+                            <h4 class="mb-0"><i class="fas fa-utensils me-2"></i>Order Details</h4>
+                        </div>
+                        <div class="card-body p-4">
+                            <form id="orderForm">
+                                <!-- Restaurant Selection -->
+                                <div class="mb-4">
+                                    <label for="restaurant" class="form-label fw-bold">Select Restaurant</label>
+                                    <select class="form-select" id="restaurant" required>
+                                        <option value="">Choose a restaurant...</option>
+                                        <option value="esbak">Esbak Kitchen</option>
+                                        <option value="framiclad">Airport Framiclad Restaurant</option>
+                                        <option value="firstchoice">First Choice Grills</option>
+                                        <option value="sika">Sika Cuisine</option>
+                                    </select>
+                                </div>
+
+                                <!-- Menu Items -->
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold">Select Menu Items</label>
+                                    <div id="menuItems" class="border rounded p-3">
+                                        <p class="text-muted">Please select a restaurant first to view menu items.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Customer Information -->
+                                <div class="row mb-4">
+                                    <div class="col-md-6">
+                                        <label for="firstName" class="form-label fw-bold">First Name</label>
+                                        <input type="text" class="form-control" id="firstName" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="lastName" class="form-label fw-bold">Last Name</label>
+                                        <input type="text" class="form-control" id="lastName" required>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-4">
+                                    <div class="col-md-6">
+                                        <label for="phone" class="form-label fw-bold">Phone Number</label>
+                                        <input type="tel" class="form-control" id="phone" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label fw-bold">Email Address</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                </div>
+
+                                <!-- Delivery Address -->
+                                <div class="mb-4">
+                                    <label for="address" class="form-label fw-bold">Delivery Address</label>
+                                    <textarea class="form-control" id="address" rows="3" placeholder="Enter your full delivery address..." required></textarea>
+                                </div>
+
+                                <div class="row mb-4">
+                                    <div class="col-md-6">
+                                        <label for="city" class="form-label fw-bold">City</label>
+                                        <input type="text" class="form-control" id="city" value="Odumase" readonly>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="postalCode" class="form-label fw-bold">Postal Code</label>
+                                        <input type="text" class="form-control" id="postalCode" placeholder="Enter postal code">
+                                    </div>
+                                </div>
+
+                                <!-- Delivery Options -->
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold">Delivery Options</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="deliveryType" id="standardDelivery" value="standard" checked>
+                                        <label class="form-check-label" for="standardDelivery">
+                                            Standard Delivery (30-45 minutes) - ₵5.00
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="deliveryType" id="expressDelivery" value="express">
+                                        <label class="form-check-label" for="expressDelivery">
+                                            Express Delivery (15-25 minutes) - ₵10.00
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <!-- Special Instructions -->
+                                <div class="mb-4">
+                                    <label for="specialInstructions" class="form-label fw-bold">Special Instructions</label>
+                                    <textarea class="form-control" id="specialInstructions" rows="2" placeholder="Any special requests or dietary requirements..."></textarea>
+                                </div>
+
+                                <!-- Payment Method -->
+                                <div class="mb-4">
+                                    <label class="form-label fw-bold">Payment Method</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="paymentMethod" id="cashOnDelivery" value="cash" checked>
+                                        <label class="form-check-label" for="cashOnDelivery">
+                                            Cash on Delivery
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="paymentMethod" id="mobileMoney" value="mobile">
+                                        <label class="form-check-label" for="mobileMoney">
+                                            Mobile Money
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="paymentMethod" id="cardPayment" value="card">
+                                        <label class="form-check-label" for="cardPayment">
+                                            Credit/Debit Card
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-lg w-100">
+                                    <i class="fas fa-paper-plane me-2"></i>Place Order
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow-sm sticky-top" style="top: 100px;">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0"><i class="fas fa-receipt me-2"></i>Order Summary</h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="orderSummary">
+                                <p class="text-muted">Your order summary will appear here once you select items.</p>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Subtotal:</span>
+                                <span id="subtotal">₵0.00</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Delivery Fee:</span>
+                                <span id="deliveryFee">₵5.00</span>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between fw-bold fs-5">
+                                <span>Total:</span>
+                                <span id="totalAmount">₵5.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Restaurants Preview -->
+    <section class="py-5">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2 class="mb-0">Featured Restaurants</h2>
+                <a href="restaurants.html" class="btn btn-outline-primary">View All Restaurants</a>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="images/Esbak.webp" class="card-img-top" alt="Esbak Kitchen" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Esbak Kitchen</h5>
+                            <p class="card-text">Authentic Ghanaian cuisine in the heart of Odumase. Traditional dishes made from fresh, locally-sourced ingredients.</p>
+                            <a href="restaurant1.html" class="btn btn-primary">View Menu</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="images/framiclad.webp" class="card-img-top" alt="Airport Framiclad Restaurant" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">Airport Framiclad Restaurant</h5>
+                            <p class="card-text">Authentic Ghanaian cuisine with a modern twist. Experience the rich flavors that make Ghanaian cuisine unique.</p>
+                            <a href="restaurant2.html" class="btn btn-primary">View Menu</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="images/first choice grill logo.jpg" class="card-img-top" alt="First Choice Grills" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">First Choice Grills</h5>
+                            <p class="card-text">Premium grilled dishes and local favorites in Odumase. Welcoming atmosphere with fresh ingredients.</p>
+                            <a href="restaurant3.html" class="btn btn-primary">View Menu</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h5><i class="fas fa-shopping-cart me-2"></i>Your Cart</h5>
+            <button class="btn-close" id="closeCart"></button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be populated here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                                        <strong>Total: <span id="cartTotalCurrency">₵</span><span id="cartTotal">0.00</span></strong>
+            </div>
+            <button class="btn btn-success w-100" id="placeOrderBtn">Place Order</button>
+        </div>
+    </div>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p>&copy; 2024 Restaurant Hub - Serving Odumase, Ghana. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    
+    <script>
+        // Sample menu data
+        const menuData = {
+            esbak: [
+                { name: "Jollof Rice", price: 25.00, description: "Traditional Ghanaian Jollof Rice" },
+                { name: "Banku & Tilapia", price: 35.00, description: "Fresh tilapia with banku" },
+                { name: "Fufu & Light Soup", price: 30.00, description: "Traditional fufu with light soup" },
+                { name: "Red Red", price: 20.00, description: "Beans with plantain and fish" }
+            ],
+            framiclad: [
+                { name: "Framiclad Special Salad", price: 28.00, description: "Fresh garden salad" },
+                { name: "Grilled Tilapia", price: 40.00, description: "Fresh grilled tilapia" },
+                { name: "Continental Dishes", price: 45.00, description: "Various continental options" }
+            ],
+            firstchoice: [
+                { name: "BBQ Grill Special", price: 50.00, description: "Premium grilled meats" },
+                { name: "Summer Grill", price: 45.00, description: "Seasonal grilled specialties" },
+                { name: "Fresh Prep Meals", price: 35.00, description: "Freshly prepared dishes" }
+            ],
+            sika: [
+                { name: "Sika Jollof", price: 30.00, description: "Special Sika style jollof" },
+                { name: "Sika Pizza", price: 100.00, description: "Large pizza with toppings" },
+                { name: "Fusion Dishes", price: 55.00, description: "Modern Ghanaian fusion" }
+            ]
+        };
+
+        // Update menu items when restaurant is selected
+        document.getElementById('restaurant').addEventListener('change', function() {
+            const restaurant = this.value;
+            const menuItemsDiv = document.getElementById('menuItems');
+            
+            if (restaurant && menuData[restaurant]) {
+                let menuHTML = '<div class="row g-3">';
+                menuData[restaurant].forEach((item, index) => {
+                    menuHTML += `
+                        <div class="col-md-6">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h6 class="card-title">${item.name}</h6>
+                                    <p class="card-text small text-muted">${item.description}</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span class="fw-bold">₵${item.price.toFixed(2)}</span>
+                                        <div class="input-group input-group-sm" style="width: 120px;">
+                                            <button type="button" class="btn btn-outline-secondary btn-sm" onclick="updateQuantity(${index}, -1)">-</button>
+                                            <input type="number" class="form-control text-center" id="qty-${index}" value="0" min="0" readonly>
+                                            <button type="button" class="btn btn-outline-secondary btn-sm" onclick="updateQuantity(${index}, 1)">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                menuHTML += '</div>';
+                menuItemsDiv.innerHTML = menuHTML;
+            } else {
+                menuItemsDiv.innerHTML = '<p class="text-muted">Please select a restaurant first to view menu items.</p>';
+            }
+            updateOrderSummary();
+        });
+
+        // Update quantity and order summary
+        function updateQuantity(index, change) {
+            const qtyInput = document.getElementById(`qty-${index}`);
+            let newQty = parseInt(qtyInput.value) + change;
+            if (newQty < 0) newQty = 0;
+            qtyInput.value = newQty;
+            updateOrderSummary();
+        }
+
+        // Update order summary
+        function updateOrderSummary() {
+            const restaurant = document.getElementById('restaurant').value;
+            const deliveryType = document.querySelector('input[name="deliveryType"]:checked').value;
+            
+            if (!restaurant || !menuData[restaurant]) {
+                document.getElementById('orderSummary').innerHTML = '<p class="text-muted">Your order summary will appear here once you select items.</p>';
+                return;
+            }
+
+            let subtotal = 0;
+            let itemsHTML = '';
+            
+            menuData[restaurant].forEach((item, index) => {
+                const quantity = parseInt(document.getElementById(`qty-${index}`).value) || 0;
+                if (quantity > 0) {
+                    const itemTotal = item.price * quantity;
+                    subtotal += itemTotal;
+                    itemsHTML += `
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>${item.name} × ${quantity}</span>
+                            <span>₵${itemTotal.toFixed(2)}</span>
+                        </div>
+                    `;
+                }
+            });
+
+            const deliveryFee = deliveryType === 'express' ? 10.00 : 5.00;
+            const total = subtotal + deliveryFee;
+
+            document.getElementById('orderSummary').innerHTML = itemsHTML || '<p class="text-muted">No items selected</p>';
+            document.getElementById('subtotal').textContent = `₵${subtotal.toFixed(2)}`;
+            document.getElementById('deliveryFee').textContent = `₵${deliveryFee.toFixed(2)}`;
+            document.getElementById('totalAmount').textContent = `₵${total.toFixed(2)}`;
+        }
+
+        // Update delivery fee when delivery type changes
+        document.querySelectorAll('input[name="deliveryType"]').forEach(radio => {
+            radio.addEventListener('change', updateOrderSummary);
+        });
+
+        // Handle form submission
+        document.getElementById('orderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const restaurant = document.getElementById('restaurant').value;
+            if (!restaurant) {
+                alert('Please select a restaurant');
+                return;
+            }
+
+            let hasItems = false;
+            menuData[restaurant].forEach((item, index) => {
+                const quantity = parseInt(document.getElementById(`qty-${index}`).value) || 0;
+                if (quantity > 0) hasItems = true;
+            });
+
+            if (!hasItems) {
+                alert('Please select at least one menu item');
+                return;
+            }
+
+            // Show success message
+            alert('Order placed successfully! We will contact you shortly to confirm your order.');
+            
+            // Reset form
+            this.reset();
+            document.getElementById('menuItems').innerHTML = '<p class="text-muted">Please select a restaurant first to view menu items.</p>';
+            updateOrderSummary();
+        });
+    </script>
+</body>
+</html>
